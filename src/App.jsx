@@ -1,7 +1,7 @@
 import React from 'react';
 import { Route } from 'react-router-dom';
-import Game from './components/Game';
-import Start from './components/Start';
+import Game from './views/Game';
+import Start from './views/Start';
 
 const App = () => (
   <div>
