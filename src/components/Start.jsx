@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { createPlayers } from '../redux/actions';
@@ -9,7 +9,7 @@ const Start = () => {
   const [playerB, setPlayerB] = useState({ name: '', color: '' });
   const [message, setMessage] = useState('');
 
-  const handleClick = () => {
+  useEffect(() => {
     const num = Math.random() * 100;
     if (num > 50) {
       setPlayerA({ ...playerA, color: 'black' });
@@ -18,6 +18,9 @@ const Start = () => {
       setPlayerA({ ...playerA, color: 'white' });
       setPlayerB({ ...playerB, color: 'black' });
     }
+  }, []);
+
+  const handleClick = () => {
     dispatch(createPlayers([playerA, playerB]));
   };
 
@@ -30,18 +33,18 @@ const Start = () => {
           type="text"
           placeholder="Player A name"
           value={playerA.name}
-          onChange={(e) => setPlayerA({ name: e.target.value, color: '' })}
+          onChange={(e) => setPlayerA({ ...playerA, name: e.target.value })}
         />
         <input
           type="text"
           placeholder="Player B name"
           value={playerB.name}
-          onChange={(e) => setPlayerB({ name: e.target.value, color: '' })}
+          onChange={(e) => setPlayerB({ ...playerB, name: e.target.value })}
         />
       </div>
-      {playerA.name && playerB.name ? <Link to="/reversi" onClick={handleClick}>Start Game</Link>
-        : <button onClick={() => setMessage('You need to create two players')} type="button">Start Game</button>}
-      {message.length > 12 ? <div><p>{message}</p></div> : null}
+      {playerA.name && playerB.name ? <Link onClick={handleClick} to="/reversi">Start Game</Link>
+        : <button type="button" onClick={() => setMessage('You need to create two players')}>Start Game</button>}
+      {message ? <div>{message}</div> : null}
     </div>
   );
 };
