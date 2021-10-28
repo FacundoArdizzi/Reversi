@@ -1,4 +1,4 @@
-import { CREATE_PLAYER_A, CREATE_PLAYER_B } from './actions';
+import { CREATE_PLAYERS } from './actions';
 
 const initialState = {
   playerA: { name: '', color: '' },
@@ -7,13 +7,10 @@ const initialState = {
 
 const rootReducer = (state = initialState, action) => {
   switch (action.type) {
-    case CREATE_PLAYER_A: return {
+    case CREATE_PLAYERS: return {
       ...state,
-      playerA: action.payload,
-    };
-    case CREATE_PLAYER_B: return {
-      ...state,
-      playerB: action.payload,
+      playerA: action.payload[0],
+      playerB: action.payload[1],
     };
     default: return state;
   }

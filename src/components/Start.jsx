@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
-import { createPlayerA, createPlayerB } from '../redux/actions';
+import { Link } from 'react-router-dom';
+import { createPlayers } from '../redux/actions';
 
 const Start = () => {
   const dispatch = useDispatch();
@@ -8,14 +9,7 @@ const Start = () => {
   const [playerB, setPlayerB] = useState({ name: '', color: '' });
   const [message, setMessage] = useState('');
 
-  const validate = (a = playerA.name, b = playerB.name) => {
-    if (!a || !b) return 'You need to assign a name for each player';
-    if (a === b) return 'You need to assign a different name for each player';
-    return 'ok';
-  };
-
-  const start = () => {
-    const m = validate();
+  const handleClick = () => {
     const num = Math.random() * 100;
     if (num > 50) {
       setPlayerA({ ...playerA, color: 'black' });
@@ -24,9 +18,7 @@ const Start = () => {
       setPlayerA({ ...playerA, color: 'white' });
       setPlayerB({ ...playerB, color: 'black' });
     }
-    if (m === 'ok') {
-      dispatch(createPlayerA(playerA), createPlayerB(playerB));
-    } else setMessage(m);
+    dispatch(createPlayers([playerA, playerB]));
   };
 
   return (
@@ -47,7 +39,8 @@ const Start = () => {
           onChange={(e) => setPlayerB({ name: e.target.value, color: '' })}
         />
       </div>
-      <button type="button" onClick={start}>Start Game</button>
+      {playerA.name && playerB.name ? <Link to="/reversi" onClick={handleClick}>Start Game</Link>
+        : <button onClick={() => setMessage('You need to create two players')} type="button">Start Game</button>}
       {message.length > 12 ? <div><p>{message}</p></div> : null}
     </div>
   );
