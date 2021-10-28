@@ -7,8 +7,21 @@ const Board = () => {
 
   return (
     <div className={styles.board}>
-      {board.map((c) => (
-        <Row key={c} id={c} />
+      <div className={styles.letters}>
+        <span>A</span>
+        <span>B</span>
+        <span>C</span>
+        <span>D</span>
+        <span>E</span>
+        <span>F</span>
+        <span>G</span>
+        <span>H</span>
+      </div>
+      {board.map((c, i) => (
+        <div key={c} className={styles.row}>
+          <span>{i + 1}</span>
+          <Row id={c} />
+        </div>
       ))}
     </div>
   );

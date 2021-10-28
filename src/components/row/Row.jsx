@@ -1,7 +1,7 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import Cell from '../cell/Cell';
 import styles from './Row.module.css';
+/* eslint-disable react/prop-types */
 
 const Row = ({ id }) => (
   <div className={styles.row}>
@@ -15,9 +15,5 @@ const Row = ({ id }) => (
     <Cell id={`${id}H`} />
   </div>
 );
-
-Row.PropTypes = {
-  id: PropTypes.string,
-};
 
 export default Row;

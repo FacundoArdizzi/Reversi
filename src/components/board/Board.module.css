@@ -1,5 +1,26 @@
 .board {
-    width: 70vw; 
-    border-radius: 3em;
-    background: #fff;
+    width: fit-content; 
+    background: #e6be7b;
+    padding: 1em;
+    margin: 2em auto;
+}
+.letters {
+    display: flex; 
+    flex-direction: row;
+    justify-content: space-around;
+    justify-items: center;
+    align-items: center;
+    width: fit-content;
+    margin: auto;
+}
+.letters span {
+    margin: 0 1.75em;
+}
+.row {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+.row span {
+    margin-right: .4em;
 }

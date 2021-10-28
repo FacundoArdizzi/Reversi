@@ -1,5 +1,7 @@
 .cell {
     border: 1px solid #000;
-    width: 5em; 
-    margin: 1em;
+    background: rgb(42, 172, 2);
+    width: 3.5em; 
+    height: 3.5em;
+    margin: .2em;
 }

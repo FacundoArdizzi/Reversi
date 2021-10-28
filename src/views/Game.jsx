@@ -11,7 +11,6 @@ const Game = () => {
 
   return (
     <div>
-      <h1>Reversi</h1>
       <div>
         <h3>Turn:</h3>
         <span>{turn % 2 === 0 ? playerB.name : playerA.name}</span>
