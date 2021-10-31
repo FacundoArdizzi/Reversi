@@ -20,7 +20,7 @@ const Board = () => {
       {board.map((c, i) => (
         <div key={c} className={styles.row}>
           <span>{i + 1}</span>
-          <Row id={c} />
+          <Row position={c} />
         </div>
       ))}
     </div>

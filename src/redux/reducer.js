@@ -1,9 +1,9 @@
-import { CREATE_PLAYERS, CHANGE_TURN } from './actions';
+import { CREATE_PLAYERS, CHANGE_TURN, SET_FIRST_TURN } from './actions';
 
 const initialState = {
   playerA: { name: '', color: '' },
   playerB: { name: '', color: '' },
-  turn: 0,
+  turn: {},
 };
 
 const rootReducer = (state = initialState, action) => {
@@ -13,9 +13,13 @@ const rootReducer = (state = initialState, action) => {
       playerA: action.payload[0],
       playerB: action.payload[1],
     };
+    case SET_FIRST_TURN: return {
+      ...state,
+      turn: action.payload,
+    };
     case CHANGE_TURN: return {
       ...state,
-      turn: state.turn + 1,
+      turn: action.payload,
     };
     default: return state;
   }
