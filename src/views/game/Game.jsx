@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { changeTurn, setFirstTurn } from '../redux/actions';
-import Board from '../components/board/Board';
+import { changeTurn, setFirstTurn } from '../../redux/actions';
+import Board from '../../components/board/Board';
 
 const Game = () => {
   const dispatch = useDispatch();

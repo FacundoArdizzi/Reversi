@@ -1,6 +1,6 @@
 import React from 'react';
 import { Route } from 'react-router-dom';
-import Game from './views/Game';
+import Game from './views/game/Game';
 import Start from './views/Start';
 
 const App = () => (

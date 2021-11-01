@@ -3,6 +3,7 @@ import {
   CHANGE_TURN,
   SET_FIRST_TURN,
   SET_CELL,
+  PUT_DISK,
 } from './actions';
 
 const initialState = {
@@ -75,6 +76,7 @@ const initialState = {
     '8G': '',
     '8H': '',
   },
+  gameRecord: {},
 };
 
 const rootReducer = (state = initialState, action) => {
@@ -95,6 +97,10 @@ const rootReducer = (state = initialState, action) => {
     case SET_CELL: return {
       ...state,
       board: { ...state.board, [action.payload]: 'active' },
+    };
+    case PUT_DISK: return {
+      ...state,
+      board: { ...state.board, [action.payload]: state.turn.color },
     };
     default: return state;
   }
