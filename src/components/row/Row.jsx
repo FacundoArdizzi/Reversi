@@ -3,16 +3,16 @@ import Cell from '../cell/Cell';
 import styles from './Row.module.css';
 /* eslint-disable react/prop-types */
 
-const Row = ({ id }) => (
+const Row = ({ position }) => (
   <div className={styles.row}>
-    <Cell id={`${id}A`} />
-    <Cell id={`${id}B`} />
-    <Cell id={`${id}C`} />
-    <Cell id={`${id}D`} />
-    <Cell id={`${id}E`} />
-    <Cell id={`${id}F`} />
-    <Cell id={`${id}G`} />
-    <Cell id={`${id}H`} />
+    <Cell position={`${position}A`} />
+    <Cell position={`${position}B`} />
+    <Cell position={`${position}C`} />
+    <Cell position={`${position}D`} />
+    <Cell position={`${position}E`} />
+    <Cell position={`${position}F`} />
+    <Cell position={`${position}G`} />
+    <Cell position={`${position}H`} />
   </div>
 );
 

@@ -1,20 +1,15 @@
 .board {
     width: fit-content; 
-    background: #e6be7b;
+/*     background: #e6be7b; */
     padding: 1em;
     margin: 2em auto;
 }
 .letters {
-    display: flex; 
-    flex-direction: row;
-    justify-content: space-around;
-    justify-items: center;
-    align-items: center;
     width: fit-content;
-    margin: auto;
+    margin-left: 1em;
 }
 .letters span {
-    margin: 0 1.75em;
+    margin: 1.58em;
 }
 .row {
     display: flex;

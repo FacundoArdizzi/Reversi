@@ -1,7 +1,24 @@
 .cell {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     border: 1px solid #000;
     background: rgb(42, 172, 2);
     width: 3.5em; 
     height: 3.5em;
-    margin: .2em;
+    margin: .1em;
+}
+
+.whiteDisk {
+    background: #FFF;
+    width: 3em;
+    height: 3em; 
+    border-radius: 100%;
+}
+
+.blackDisk {
+    background: #000;
+    width: 3em;
+    height: 3em; 
+    border-radius: 100%;
 }
