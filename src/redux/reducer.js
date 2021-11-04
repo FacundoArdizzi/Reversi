@@ -76,6 +76,7 @@ const initialState = {
     '8G': '',
     '8H': '',
   },
+  score: { white: 2, black: 2 },
   gameRecord: {},
 };
 

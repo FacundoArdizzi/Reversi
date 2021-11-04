@@ -1,0 +1,29 @@
+.turn {
+    display: flex;
+    flex-direction: column; 
+    align-items: center;
+}
+.turn p {
+    font-size: 1.4rem;
+    font-weight: 500;
+    margin-bottom: 1px;
+}
+.turn span {
+    font-size: 1.2rem;
+    font-weight: 300;
+    margin: none;
+}
+.turn button {
+    border: 2px solid var(--green);
+    border-radius: 10px;
+    background: transparent; 
+    padding: .3em 3em;
+    color: var(--green);
+    font-size: 1rem;
+    margin-top: 10px;
+    cursor: pointer;
+}
+.turn button:hover {
+    background: var(--green);
+    color: var(--white);
+}
