@@ -3,6 +3,7 @@ export const SET_FIRST_TURN = 'setFirstTurn';
 export const CHANGE_TURN = 'changeTurn';
 export const SET_CELL = 'setCell';
 export const PUT_DISK = 'putDisk';
+export const UPDATE_SCORE = 'updateScore';
 
 export const createPlayers = (players) => (
   { type: CREATE_PLAYERS, payload: players }
@@ -22,4 +23,8 @@ export const setCell = (cell) => (
 
 export const putDisk = (position) => (
   { type: PUT_DISK, payload: position }
+);
+
+export const updateScore = () => (
+  { type: UPDATE_SCORE }
 );

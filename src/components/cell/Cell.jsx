@@ -1,6 +1,11 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { setCell, putDisk, changeTurn } from '../../redux/actions';
+import {
+  setCell,
+  putDisk,
+  changeTurn,
+  updateScore,
+} from '../../redux/actions';
 import styles from './Cell.module.css';
 /* eslint-disable react/prop-types */
 
@@ -15,10 +20,15 @@ const Cell = ({ position }) => {
   const playerA = useSelector((state) => state.playerA);
   const playerB = useSelector((state) => state.playerB);
   const turn = useSelector((state) => state.turn);
+  const b = useSelector((state) => state.board);
+  const s = useSelector((state) => state.score);
+
+  console.log(b, s);
 
   const handleClick = () => {
     console.log([position, turn.color]);
     dispatch(putDisk(position));
+    dispatch(updateScore());
     if (turn === playerA) {
       dispatch(changeTurn(playerB));
     } else {

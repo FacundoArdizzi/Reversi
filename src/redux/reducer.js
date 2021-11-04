@@ -4,6 +4,7 @@ import {
   SET_FIRST_TURN,
   SET_CELL,
   PUT_DISK,
+  UPDATE_SCORE,
 } from './actions';
 
 const initialState = {
@@ -102,6 +103,13 @@ const rootReducer = (state = initialState, action) => {
     case PUT_DISK: return {
       ...state,
       board: { ...state.board, [action.payload]: state.turn.color },
+    };
+    case UPDATE_SCORE: return {
+      ...state,
+      score: {
+        white: Object.values(state.board).filter((c) => c === 'white').length,
+        black: Object.values(state.board).filter((c) => c === 'black').length,
+      },
     };
     default: return state;
   }
