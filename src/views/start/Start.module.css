@@ -1,0 +1,80 @@
+
+.start {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-items: center;
+    width: 50vw;
+    margin: 1em auto;
+}
+.inputs {
+    width: 55vw; 
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    margin: 3em 0;
+}
+.inputs input {
+    background: transparent; 
+    width: 45%;
+    text-align: center;
+    border: none;
+    border-bottom: 2px solid var(--grey);
+    height: 2.5em;
+    font-size: 1.3rem;
+    font-weight: 500;
+    color: var(--green);
+    transition: all .2s ease;
+}
+::placeholder {
+    font-size: 1.3rem;
+    font-weight: 500;
+}
+.inputs input:focus {
+    outline: none;
+    border-bottom: 2px solid var(--green);
+}
+.disable {
+    background: none; 
+    border: 2px solid #458842b6;
+    color: #458842b6;
+    font-weight: 500;
+    font-size: 1.2rem;
+    padding: .5em 3.8em;
+    margin: 2em auto;
+    border-radius: .8em;
+    cursor: pointer;
+}
+.message {
+    background: #ff9f9f;
+    width: 20vw;
+    padding: 1em;
+    display: flex; 
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    color: var(--black);
+    border-radius: .8em;
+    transition: all .2s ease;
+}
+.message svg {
+    font-size: 2.5rem;
+    color: #ff4646;
+}
+.able {
+    background: none; 
+    border: 2px solid var(--green);
+    color: var(--green);
+    font-weight: 500;
+    font-size: 1.2rem;
+    padding: .5em 3.8em;
+    margin: 2em auto;
+    border-radius: .8em;
+    cursor: pointer;
+    text-decoration: none;
+    transition: all .2s ease;
+}
+.able:hover {
+    background: var(--green);
+    color: var(--white);
+}
